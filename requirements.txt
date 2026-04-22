@@ -1,1 +1,6 @@
-
+boto3
+langchain
+faiss-cpu
+streamlit
+awscli
+langchain_aws
