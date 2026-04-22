@@ -15,7 +15,13 @@ from langchain_classic.prompts import ChatPromptTemplate
 from langchain_classic.chains.retrieval import create_retrieval_chain
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 
-bedrock_clinet=boto3.client(service_name="bedrock-runtime")
+bedrock_clinet = boto3.client(
+    service_name="bedrock-runtime",
+    region_name=st.secrets["AWS_DEFAULT_REGION"],
+    aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"]
+)
+
 bedrock_embeddings=BedrockEmbeddings(model_id="amazon.titan-embed-text-v1",client=bedrock_clinet)
 
 def data_ingestion():
