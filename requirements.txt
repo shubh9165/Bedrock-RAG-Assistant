@@ -22,5 +22,6 @@ fastapi
 uvicorn
 langserve[all]
 arxiv
+torchvision
 wikipedia
 ddgs
